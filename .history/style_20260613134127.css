@@ -619,31 +619,3 @@ footer{
     height:32px;
     width:auto;
 }
-
-.hero-image img{
-    max-width:520px;
-    animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-.social-icons img{
-    width:26px;
-    height:26px;
-    background:#fff;
-    border-radius:50%;
-    padding:4px;
-}
