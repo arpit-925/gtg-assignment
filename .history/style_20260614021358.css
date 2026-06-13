@@ -259,77 +259,62 @@ header{
 /* =========================
    RESPONSIVE
 ========================= */
-/* POPULAR ITEMS */
 
-.popular-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-}
+@media(max-width:992px){
 
-.popular-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    width:100%;
-    max-width:1000px;
-}
+    .hero-wrapper{
+        flex-direction:column;
+        text-align:center;
+    }
 
-.popular-grid .food-card{
-    width:100%;
-}
+    .hero-content p{
+        margin:auto;
+        margin-top:20px;
+    }
 
-/* Tablet */
-@media (max-width:992px){
-
-    .popular-grid{
+    .food-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .custom-prev,
-    .custom-next{
-        width:50px;
-        height:50px;
-    }
 }
 
-/* Mobile */
-@media (max-width:768px){
+@media(max-width:768px){
 
-    .popular-wrapper{
+    .nav-links{
+        display:none;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+    }
+
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
+     .popular-wrapper{
         flex-direction:column;
+        gap:20px;
     }
 
     .popular-grid{
-        grid-template-columns:1fr;
-        width:100%;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
     }
 
     .popular-grid .food-card{
-        max-width:350px;
-        margin:0 auto;
+        width:100%;
+        max-width:320px;
     }
 
     .custom-prev,
     .custom-next{
         display:none;
     }
-
-    .popular-items{
-        padding:60px 0;
-    }
-
-    .popular-items h2{
-        font-size:30px;
-        margin-bottom:30px;
-    }
-
-    .request-btn{
-        width:100%;
-        max-width:300px;
-    }
 }
+
+
 
 /* =========================
    POPULAR ITEMS
@@ -730,44 +715,4 @@ transform:translateY(0);
     background:#fff;
     border-radius:50%;
     padding:4px;
-}
-
-@media (max-width:768px){
-
-    .popular-wrapper{
-        flex-direction:column;
-        gap:20px;
-    }
-
-    .popular-grid{
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
-    }
-
-    .popular-grid .food-card{
-        width:100%;
-        max-width:320px;
-    }
-
-    .custom-prev,
-    .custom-next{
-        display:none;
-    }
-}
-
-.discount-badge{
-    position:absolute;
-    top:10px;
-    left:10px;
-    background:#F3BA00;
-    color:#101115;
-    padding:6px 10px;
-    border-radius:6px;
-    font-size:12px;
-    font-weight:600;
-}
-
-.food-card{
-    position:relative;
 }
