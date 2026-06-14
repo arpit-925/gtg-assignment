@@ -159,39 +159,19 @@ foodGrid.innerHTML += `
    SWIPER
 ========================== */
 
-
-/* ==========================
-   MODAL
-========================== */
-
-const modal =
-document.getElementById("imageModal");
-
-const playBtn =
-document.getElementById("playBtn");
-
-const closeBtn =
-document.getElementById("closeModal");
+const playBtn = document.getElementById("playBtn");
+const thumbnail = document.getElementById("videoThumbnail");
+const video = document.getElementById("foodVideo");
 
 playBtn.addEventListener("click", () => {
 
-    modal.style.display = "block";
+    thumbnail.style.display = "none";
 
-});
+    playBtn.style.display = "none";
 
-closeBtn.addEventListener("click", () => {
+    video.style.display = "block";
 
-    modal.style.display = "none";
-
-});
-
-window.addEventListener("click", (e) => {
-
-    if(e.target === modal){
-
-        modal.style.display = "none";
-
-    }
+    video.play();
 
 });
 
