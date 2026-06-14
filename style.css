@@ -105,6 +105,8 @@ header{
 /* =========================
    HERO SECTION
 ========================= */
+
+
 .hero{
     background: var(--primary);
     padding: 60px 0 100px;
@@ -114,7 +116,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 50px;
 }
 
 .hero-content{
@@ -122,7 +124,7 @@ header{
 }
 
 .hero-content h1{
-    color: white;
+    color: #fff;
     font-size: 72px;
     line-height: 82px;
     font-weight: 400;
@@ -130,7 +132,7 @@ header{
 
 .hero-content p{
     margin-top: 24px;
-    color: white;
+    color: #fff;
     font-size: 18px;
     line-height: 32px;
     max-width: 450px;
@@ -141,6 +143,7 @@ header{
     display: flex;
     overflow: hidden;
     border-radius: 10px;
+    max-width: 500px;
 }
 
 .search-container input{
@@ -154,7 +157,7 @@ header{
 .search-container button{
     border: none;
     background: var(--yellow);
-    color: white;
+    color: #fff;
     padding: 18px 35px;
     cursor: pointer;
     font-size: 16px;
@@ -172,14 +175,22 @@ header{
     width: 100%;
     max-width: 520px;
     height: auto;
+    display: block;
 }
 
-/* Laptop */
+/* =========================
+   1200px
+========================= */
+
 @media (max-width: 1200px){
 
+    .hero-wrapper{
+        gap: 40px;
+    }
+
     .hero-content h1{
-        font-size: 56px;
-        line-height: 66px;
+        font-size: 58px;
+        line-height: 68px;
     }
 
     .hero-image img{
@@ -187,8 +198,11 @@ header{
     }
 }
 
-/* Tablet */
-@media (max-width: 992px){
+/* =========================
+   1024px
+========================= */
+
+@media (max-width: 1024px){
 
     .hero{
         padding: 50px 0 80px;
@@ -199,8 +213,8 @@ header{
     }
 
     .hero-content h1{
-        font-size: 46px;
-        line-height: 56px;
+        font-size: 44px;
+        line-height: 54px;
     }
 
     .hero-content p{
@@ -209,12 +223,47 @@ header{
     }
 
     .hero-image img{
-        max-width: 380px;
+        max-width: 350px;
+    }
+
+    .search-container input{
+        padding: 14px 16px;
+    }
+
+    .search-container button{
+        padding: 14px 22px;
     }
 }
 
-/* Mobile */
+/* =========================
+   992px
+========================= */
+
+@media (max-width: 992px){
+
+    .hero-wrapper{
+        gap: 25px;
+    }
+
+    .hero-content h1{
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .hero-image img{
+        max-width: 320px;
+    }
+}
+
+/* =========================
+   768px
+========================= */
+
 @media (max-width: 768px){
+
+    .hero{
+        padding: 40px 0 70px;
+    }
 
     .hero-wrapper{
         flex-direction: column;
@@ -222,28 +271,34 @@ header{
     }
 
     .hero-content{
-        order: 1;
-    }
-
-    .hero-image{
-        order: 2;
+        width: 100%;
     }
 
     .hero-content p{
         max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-content h1{
-        font-size: 38px;
-        line-height: 48px;
+        font-size: 36px;
+        line-height: 46px;
     }
 
     .search-container{
         width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-image img{
+        max-width: 420px;
     }
 }
 
-/* Small Mobile */
+/* =========================
+   480px
+========================= */
+
 @media (max-width: 480px){
 
     .hero-content h1{
@@ -251,16 +306,25 @@ header{
         line-height: 40px;
     }
 
+    .hero-content p{
+        font-size: 15px;
+        line-height: 26px;
+    }
+
     .search-container{
         flex-direction: column;
+    }
+
+    .search-container input{
+        width: 100%;
     }
 
     .search-container button{
         width: 100%;
     }
 
-    .search-container input{
-        width: 100%;
+    .hero-image img{
+        max-width: 280px;
     }
 }
 /* =========================
