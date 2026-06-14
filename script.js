@@ -158,22 +158,27 @@ foodGrid.innerHTML += `
 /* ==========================
    SWIPER
 ========================== */
+/* ==========================
+   VIDEO
+========================== */
 
 const playBtn = document.getElementById("playBtn");
 const thumbnail = document.getElementById("videoThumbnail");
 const video = document.getElementById("foodVideo");
 
-playBtn.addEventListener("click", () => {
+if (playBtn && thumbnail && video) {
 
-    thumbnail.style.display = "none";
+    playBtn.addEventListener("click", () => {
 
-    playBtn.style.display = "none";
+        thumbnail.style.display = "none";
+        playBtn.style.display = "none";
+        video.style.display = "block";
+        video.play();
 
-    video.style.display = "block";
+    });
 
-    video.play();
+}
 
-});
 
 /* ==========================
    CONTACT FORM
@@ -181,18 +186,15 @@ playBtn.addEventListener("click", () => {
 
 const contactForm =
 document.getElementById("contactForm");
+if(contactForm){
+    contactForm.addEventListener("submit",(e)=>{
+        e.preventDefault();
 
-contactForm.addEventListener("submit",(e)=>{
+        alert("Thank you! Your message has been submitted.");
 
-    e.preventDefault();
-
-    alert(
-        "Thank you! Your message has been submitted."
-    );
-
-    contactForm.reset();
-
-});
+        contactForm.reset();
+    });
+}
 
 /* ==========================
    SEARCH BUTTON
@@ -201,42 +203,47 @@ contactForm.addEventListener("submit",(e)=>{
 const searchButton =
 document.querySelector(".search-container button");
 
-searchButton.addEventListener("click",()=>{
+if(searchButton){
 
-    const value =
-    document.querySelector(
-    ".search-container input"
-    ).value;
+    searchButton.addEventListener("click",()=>{
 
-    if(value.trim() !== ""){
+        const value =
+        document.querySelector(
+        ".search-container input"
+        ).value;
 
-        alert(`Searching for: ${value}`);
+        if(value.trim() !== ""){
+            alert(`Searching for: ${value}`);
+        }
 
-    }
+    });
 
-});
-
+}
 const requestBtn = document.querySelector(".request-btn");
 const dishModal = document.getElementById("dishModal");
 const cancelBtn = document.getElementById("cancelBtn");
 const dishForm = document.getElementById("dishForm");
+if(requestBtn && dishModal && cancelBtn && dishForm){
 
-requestBtn.addEventListener("click", () => {
-    dishModal.style.display = "flex";
-});
+    requestBtn.addEventListener("click", () => {
+        dishModal.style.display = "flex";
+    });
 
-cancelBtn.addEventListener("click", () => {
-    dishModal.style.display = "none";
-});
+    cancelBtn.addEventListener("click", () => {
+        dishModal.style.display = "none";
+    });
 
-dishForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+    dishForm.addEventListener("submit", (e) => {
 
-    alert("Request submitted successfully!");
+        e.preventDefault();
 
-    dishForm.reset();
-    dishModal.style.display = "none";
-});
+        alert("Request submitted successfully!");
+
+        dishForm.reset();
+        dishModal.style.display = "none";
+    });
+
+}
 
 window.addEventListener("click", (e) => {
     if(e.target === dishModal){
@@ -244,14 +251,26 @@ window.addEventListener("click", (e) => {
     }
 });
 
+
 const swiper = new Swiper(".popularSwiper", {
+
     slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
 
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+    },
+
     navigation: {
         nextEl: ".custom-next",
         prevEl: ".custom-prev"
+    },
+
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true
     },
 
     breakpoints: {
@@ -265,4 +284,5 @@ const swiper = new Swiper(".popularSwiper", {
             slidesPerView: 3
         }
     }
+
 });
