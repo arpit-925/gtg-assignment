@@ -1,7 +1,6 @@
 /* =========================
    RESET
 ========================= */
-
 *{
     margin:0;
     padding:0;
@@ -16,7 +15,9 @@ body{
     font-family:'Open Sans',sans-serif;
     background:#f7f8fa;
     color:#101115;
+     font-family:Roboto;
 }
+
 
 img{
     max-width:100%;
@@ -71,6 +72,7 @@ header{
     font-size:32px;
     font-weight:700;
     letter-spacing:1px;
+    font-family:'Squada One';
 }
 
 .nav-links{
@@ -82,6 +84,7 @@ header{
     color:white;
     font-size:18px;
     font-weight:400;
+    font-family:'Roboto';
 }
 
 .nav-icons{
@@ -476,22 +479,27 @@ header{
 
 .custom-prev,
 .custom-next{
-    width:60px;
-    height:60px;
-    border:none;
-    border-radius:50%;
-    background:#fff;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    flex-shrink:0;
+    background: transparent;
+    border: none;
+    width: 71.5px;
+    height: 71.5px;
+    padding: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .custom-prev img,
 .custom-next img{
-    width:28px;
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    display: block;
+}
+.custom-prev img{
+    width: 50px;
+    height: 50px;
 }
 
 .request-btn{
@@ -587,6 +595,7 @@ header{
 .video-header h2{
     font-size:42px;
     line-height:1.3;
+    font-family:'Montserrat';
 }
 
 .video-header p{
@@ -908,4 +917,85 @@ transform:translateY(0);
 
 .food-card{
     position:relative;
+}
+/* Modal Overlay */
+.dish-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Modal Box */
+.dish-modal-content{
+    width:620px;
+    max-width:90%;
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.dish-modal-content h2{
+    margin-bottom:25px;
+    font-size:40px;
+}
+
+.dish-modal-content input{
+    width:100%;
+    padding:18px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:18px;
+}
+
+.modal-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:15px;
+}
+
+.cancel-btn{
+    padding:14px 30px;
+    border:none;
+    background:#eee;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.submit-request-btn{
+    padding:14px 30px;
+    border:none;
+    background:#1AC073;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+.popular-grid{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    justify-content:flex-start;
+}
+
+.popular-grid::-webkit-scrollbar{
+    display:none;
+}
+
+.popular-grid .food-card{
+    min-width:300px;
+    flex-shrink:0;
 }

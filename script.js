@@ -154,105 +154,11 @@ foodGrid.innerHTML += `
    POPULAR ITEMS
 ========================== */
 
-const popularItems =
-document.getElementById("popularItems");
-
-foods.slice(0,6).forEach(food => {
-
-popularItems.innerHTML += `
-<div class="swiper-slide">
-
-    <div class="food-card">
-
-        <img
-            src="${food.image}"
-            alt="${food.title}"
-            class="food-image">
-
-        <div class="food-content">
-
-            <div class="food-title-row">
-
-                <h4 class="food-title">
-                    ${food.title}
-                </h4>
-
-                <span class="food-price">
-                    ${food.price}
-                </span>
-
-            </div>
-
-            <div class="food-meta">
-
-                <div class="rating">
-
-                    <img
-                    src="./assets/ant-design_star-filled.svg"
-                    alt="star">
-
-                    <span>
-                        ${food.rating}
-                    </span>
-
-                </div>
-
-                <span class="time">
-                    ${food.time}
-                </span>
-
-                <button class="add-btn">
-                    +
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-`;
-
-});
 
 /* ==========================
    SWIPER
 ========================== */
 
-new Swiper(".popularSwiper", {
-
-slidesPerView: 3,
-
-spaceBetween: 25,
-
-loop: true,
-
-navigation: {
-
-    nextEl: ".custom-next",
-
-    prevEl: ".custom-prev"
-
-},
-
-breakpoints: {
-
-    320: {
-        slidesPerView: 1
-    },
-
-    768: {
-        slidesPerView: 2
-    },
-
-    1024: {
-        slidesPerView: 3
-    }
-
-}
-
-});
 
 /* ==========================
    MODAL
@@ -329,3 +235,55 @@ searchButton.addEventListener("click",()=>{
     }
 
 });
+
+const requestBtn = document.querySelector(".request-btn");
+const dishModal = document.getElementById("dishModal");
+const cancelBtn = document.getElementById("cancelBtn");
+const dishForm = document.getElementById("dishForm");
+
+requestBtn.addEventListener("click", () => {
+    dishModal.style.display = "flex";
+});
+
+cancelBtn.addEventListener("click", () => {
+    dishModal.style.display = "none";
+});
+
+dishForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    alert("Request submitted successfully!");
+
+    dishForm.reset();
+    dishModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if(e.target === dishModal){
+        dishModal.style.display = "none";
+    }
+});
+
+const swiper = new Swiper(".popularSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+
+    navigation: {
+        nextEl: ".custom-next",
+        prevEl: ".custom-prev"
+    },
+
+    breakpoints: {
+        320: {
+            slidesPerView: 1
+        },
+        768: {
+            slidesPerView: 2
+        },
+        1024: {
+            slidesPerView: 3
+        }
+    }
+});
+
