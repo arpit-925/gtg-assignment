@@ -105,100 +105,163 @@ header{
 /* =========================
    HERO SECTION
 ========================= */
-
 .hero{
-    background:var(--primary);
-    padding:60px 0 100px;
+    background: var(--primary);
+    padding: 60px 0 100px;
 }
 
 .hero-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .hero-content{
-    flex:1;
+    flex: 1;
 }
 
 .hero-content h1{
-    color:white;
-    font-size:72px;
-    line-height:82px;
-    font-weight:400;
+    color: white;
+    font-size: 72px;
+    line-height: 82px;
+    font-weight: 400;
 }
 
 .hero-content p{
-    margin-top:24px;
-    color:white;
-    font-size:18px;
-    line-height:32px;
-    max-width:450px;
+    margin-top: 24px;
+    color: white;
+    font-size: 18px;
+    line-height: 32px;
+    max-width: 450px;
 }
 
 .search-container{
-    margin-top:32px;
-    display:flex;
-    overflow:hidden;
-    border-radius:10px;
+    margin-top: 32px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .search-container input{
-    flex:1;
-    border:none;
-    outline:none;
-    padding:18px 20px;
-    font-size:16px;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 18px 20px;
+    font-size: 16px;
 }
 
 .search-container button{
-    border:none;
-    background:var(--yellow);
-    color:white;
-    padding:18px 35px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:600;
+    border: none;
+    background: var(--yellow);
+    color: white;
+    padding: 18px 35px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .hero-image{
-    flex:1;
-    display:flex;
-    justify-content:center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img{
-    width:100%;
-    max-width:550px;
-    height:auto;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
 }
 
-@media (max-width:1024px){
+/* Laptop */
+@media (max-width: 1200px){
 
     .hero-content h1{
-        font-size:56px;
-        line-height:64px;
+        font-size: 56px;
+        line-height: 66px;
     }
 
+    .hero-image img{
+        max-width: 450px;
+    }
 }
 
-@media (max-width:768px){
+/* Tablet */
+@media (max-width: 992px){
+
+    .hero{
+        padding: 50px 0 80px;
+    }
 
     .hero-wrapper{
-        flex-direction:column;
-        text-align:center;
+        gap: 30px;
     }
 
     .hero-content h1{
-        font-size:42px;
-        line-height:52px;
+        font-size: 46px;
+        line-height: 56px;
     }
 
     .hero-content p{
-        max-width:100%;
+        font-size: 16px;
+        line-height: 28px;
     }
 
+    .hero-image img{
+        max-width: 380px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+    .hero-wrapper{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content{
+        order: 1;
+    }
+
+    .hero-image{
+        order: 2;
+    }
+
+    .hero-content p{
+        max-width: 100%;
+    }
+
+    .hero-content h1{
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    .search-container{
+        width: 100%;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px){
+
+    .hero-content h1{
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .search-container{
+        flex-direction: column;
+    }
+
+    .search-container button{
+        width: 100%;
+    }
+
+    .search-container input{
+        width: 100%;
+    }
 }
 /* =========================
    HOME KITCHEN
