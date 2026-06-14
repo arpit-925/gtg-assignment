@@ -286,4 +286,3 @@ const swiper = new Swiper(".popularSwiper", {
         }
     }
 });
-
