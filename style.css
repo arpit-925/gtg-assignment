@@ -94,6 +94,13 @@ header{
     width:24px;
     cursor:pointer;
 }
+@media (max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+}
 
 /* =========================
    HERO SECTION
@@ -167,6 +174,32 @@ header{
     height:auto;
 }
 
+@media (max-width:1024px){
+
+    .hero-content h1{
+        font-size:56px;
+        line-height:64px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero-wrapper{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+        line-height:52px;
+    }
+
+    .hero-content p{
+        max-width:100%;
+    }
+
+}
 /* =========================
    HOME KITCHEN
 ========================= */
@@ -184,6 +217,24 @@ header{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:24px;
+}
+
+/* Tablet */
+@media (max-width:1024px){
+
+    .food-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
 }
 
 .food-card{
@@ -255,81 +306,11 @@ header{
     border-radius:6px;
     cursor:pointer;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
-/* POPULAR ITEMS */
-
-.popular-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-}
-
-.popular-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    width:100%;
-    max-width:1000px;
-}
-
-.popular-grid .food-card{
+.food-card{
     width:100%;
 }
 
-/* Tablet */
-@media (max-width:992px){
 
-    .popular-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .custom-prev,
-    .custom-next{
-        width:50px;
-        height:50px;
-    }
-}
-
-/* Mobile */
-@media (max-width:768px){
-
-    .popular-wrapper{
-        flex-direction:column;
-    }
-
-    .popular-grid{
-        grid-template-columns:1fr;
-        width:100%;
-    }
-
-    .popular-grid .food-card{
-        max-width:350px;
-        margin:0 auto;
-    }
-
-    .custom-prev,
-    .custom-next{
-        display:none;
-    }
-
-    .popular-items{
-        padding:60px 0;
-    }
-
-    .popular-items h2{
-        font-size:30px;
-        margin-bottom:30px;
-    }
-
-    .request-btn{
-        width:100%;
-        max-width:300px;
-    }
-}
 
 /* =========================
    POPULAR ITEMS
@@ -345,20 +326,25 @@ header{
     margin-bottom:50px;
 }
 
-.slider-wrapper{
+.popular-wrapper{
     display:flex;
-    align-items:center;
     justify-content:center;
-    gap:20px;
+    align-items:center;
+    gap:30px;
+    margin-bottom:40px;
 }
 
-.popularSwiper{
-    width:100%;
-    max-width:900px;
+.popular-grid{
+    display:flex;
+    flex-direction:row;
+    gap:30px;
+    justify-content:center;
+    align-items:flex-start;
 }
 
-.swiper-slide{
-    padding:10px;
+.popular-grid .food-card{
+    width:300px;
+    min-width:300px;
 }
 
 .custom-prev,
@@ -367,12 +353,13 @@ header{
     height:60px;
     border:none;
     border-radius:50%;
-    cursor:pointer;
     background:#fff;
     box-shadow:0 4px 12px rgba(0,0,0,.12);
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    flex-shrink:0;
 }
 
 .custom-prev img,
@@ -381,38 +368,12 @@ header{
 }
 
 .request-btn{
-    margin-top:40px;
-    border:none;
-    background:var(--primary);
-    color:white;
-    padding:14px 40px;
-    border-radius:8px;
-    font-size:16px;
-    cursor:pointer;
-}
-
-.popular-wrapper{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.popular-grid{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.request-btn{
     display:block;
     margin:50px auto 0;
-    padding:14px 40px;
+    border:none;
     background:#1AC073;
     color:#fff;
-    border:none;
+    padding:14px 40px;
     border-radius:8px;
     cursor:pointer;
     font-size:16px;
@@ -437,6 +398,42 @@ header{
 
 .quantity-box span{
     padding:0 12px;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    .popular-wrapper{
+        flex-direction:column;
+    }
+
+    .popular-grid{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .popular-grid{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .popular-grid .food-card{
+        width:100%;
+        max-width:320px;
+    }
+
+    .custom-prev,
+    .custom-next{
+        display:none;
+    }
+
 }
 /* =========================
    VIDEO SECTION
@@ -568,7 +565,13 @@ textarea{
 .contact-image img{
     max-width:420px;
 }
+@media (max-width:768px){
 
+    .contact-image img{
+        max-width:280px;
+    }
+
+}
 /* =========================
    FOOTER
 ========================= */
@@ -608,7 +611,15 @@ footer{
     width:28px;
     cursor:pointer;
 }
+@media (max-width:768px){
 
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+}
 /* =========================
    MODAL
 ========================= */

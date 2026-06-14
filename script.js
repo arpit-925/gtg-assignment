@@ -34,7 +34,7 @@ const foods = [
 {
     image:"./assets/unsplash_nP11TkjxJ7s.png",
     title:"Home made pizza",
-    price:"₹190",
+    price:"$19",
     rating:"4.7",
     time:"50-79 min"
 },
@@ -62,7 +62,7 @@ const foods = [
 {
     image:"./assets/pexels-omar-mahmood-106343 1.png",
     title:"Home made pizza",
-    price:"₹190",
+    price:"$19",
     rating:"4.7",
     time:"50-79 min"
 },
